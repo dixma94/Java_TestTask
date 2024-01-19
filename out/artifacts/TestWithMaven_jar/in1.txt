@@ -1,0 +1,11 @@
+Lorem ipsum dolor sit amet
+Пример
+3.1415
+3,1415
+consectetur adipiscing
+-0.001
+тестовое задание
+123
+12312312312
+123
+1231231
