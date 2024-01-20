@@ -32,7 +32,7 @@ public class Filter {
             }
     }
 
-    public void SetSortedLists(List<FilteredList> lists) {
+    public void SetFilteredLists(List<FilteredList> lists) {
         this.lists = lists;
     }
 
@@ -47,6 +47,7 @@ public class Filter {
                 fileWriteReader.WriteToFile(filteredList, outputPath+ filteredList.getFileName(), append);
             }
             catch (Exception e){
+                System.out.println(filteredList.getFileName() +" couldn't be written.");
                 System.out.println(e.getMessage());
             }
         }

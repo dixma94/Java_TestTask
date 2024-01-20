@@ -5,13 +5,13 @@ import java.math.BigDecimal;
 public class DoublesStatistics implements IStatistics<Double> {
     private double max = 0;
     private double min = Double.MAX_VALUE;
-    private BigDecimal sum =BigDecimal.valueOf(0);
+    private double sum = 0;
     private int count = 0;
     public void AddValue(Double value) {
         if(value>max) max = value;
         if(value<min) min = value;
         count++;
-        sum = sum.add(BigDecimal.valueOf(value));
+        sum +=value;
     }
     public void PrintShortStatistic(){
         if (count==0) return;
@@ -29,6 +29,6 @@ public class DoublesStatistics implements IStatistics<Double> {
         System.out.println();
     }
     private double GetAverage(){
-        return sum.doubleValue() /count;
+        return sum /count;
     }
 }

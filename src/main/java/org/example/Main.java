@@ -8,10 +8,11 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) throws Exception {
+        args = new String[]{"in1.txt","in2.txt"};
         if (args.length == 0) throw new Exception("Missing input text files. Specify the path to the input file");
 
         FileWriteReader fileWriteReader = new FileWriteReader();
-        Filter sorter = new Filter();
+        Filter filter = new Filter();
 
         Options options;
         try {
@@ -25,17 +26,17 @@ public class Main {
         filteredLists.add(new DoubleFilteredList());
         filteredLists.add(new StringFilteredList());
 
-        sorter.SetSortedLists(filteredLists);
+        filter.SetFilteredLists(filteredLists);
         try {
-            for(String inputFilePath: options.listInputFilePaths){
-                sorter.ReadFile(inputFilePath, fileWriteReader);
+            for(String inputFilePath: options.getListInputFilePaths()){
+                filter.ReadFile(inputFilePath, fileWriteReader);
             }
             System.out.println();
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
         }
-        sorter.WriteToFile(fileWriteReader, options.GetOutputPath(), options.IsAppend);
-        sorter.PrintStatistics(options.statisticsMode);
+        filter.WriteToFile(fileWriteReader, options.GetOutputPath(), options.isAppend());
+        filter.PrintStatistics(options.getStatisticsMode());
 
     }
 
