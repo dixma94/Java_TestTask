@@ -20,7 +20,10 @@ public class Options {
 
     private void CreateOptionsMap() {
 
-        optionsMap.put("-s",new OptionAction("print short statistics",false,(parameter) -> statisticsMode = PrintStatisticsMode.SHORT_STATISTICS));
+        optionsMap.put("-s",new OptionAction("print short statistics",
+                false,
+                (parameter) -> statisticsMode= (statisticsMode == PrintStatisticsMode.FULL_STATISTICS)?PrintStatisticsMode.FULL_STATISTICS:PrintStatisticsMode.SHORT_STATISTICS)
+        );
         optionsMap.put("-f",new OptionAction("print full statistics",false,(parameter)-> statisticsMode = PrintStatisticsMode.FULL_STATISTICS));
         optionsMap.put("-a",new OptionAction("append to files",false,(parameter)->IsAppend = true));
         optionsMap.put("-p",new OptionAction("prefix output file",true, parameter-> prefixPath = parameter));
@@ -31,6 +34,7 @@ public class Options {
     }
 
     public void ParseOptions(String[] args) throws Exception {
+        System.out.println("Filter files with next options:");
         for (int i = 0; i < args.length; i++) {
             String arg = args[i];
             if (optionsMap.containsKey(arg)){
@@ -60,6 +64,7 @@ public class Options {
             }
             System.out.println(text);
         }
+        System.out.println();
     }
 
     public String GetOutputPath() {

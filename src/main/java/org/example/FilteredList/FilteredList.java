@@ -11,14 +11,9 @@ public abstract class FilteredList<T> extends ArrayList<String> {
     public abstract boolean TryAddToList(String line);
     public void PrintStatistics(PrintStatisticsMode mode){
         switch (mode) {
-            case SHORT_STATISTICS -> {
-                statistics.PrintShortStatistic();
-            }
-            case FULL_STATISTICS -> {
-                statistics.PrintFullStatistic();
-            }
-            case NO_STATISTICS -> {
-            }
+            case SHORT_STATISTICS -> statistics.PrintShortStatistic();
+            case FULL_STATISTICS -> statistics.PrintFullStatistic();
+            case NO_STATISTICS -> {}
         }
     }
     public String getFileName() {

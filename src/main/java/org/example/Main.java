@@ -30,6 +30,7 @@ public class Main {
             for(String inputFilePath: options.listInputFilePaths){
                 sorter.ReadFile(inputFilePath, fileWriteReader);
             }
+            System.out.println();
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
         }

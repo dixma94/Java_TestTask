@@ -1,7 +1,8 @@
 package org.example.Statistics;
 
-public class LongStatistics implements IStatistics<Long> {
+import java.math.BigDecimal;
 
+public class LongStatistics implements IStatistics<Long> {
     public long min = Long.MAX_VALUE;
     public long max = 0;
     public int count = 0;
@@ -18,12 +19,13 @@ public class LongStatistics implements IStatistics<Long> {
     }
     public void PrintFullStatistic(){
         if (count==0) return;
-        System.out.println("Integers:"+ "\n"
-                +"count: "+ count + "\n"
-                +"max : " +max +"\n"
-                +"min : "+ min+"\n"
-                +"sum : " + sum +"\n"
-                +"average: " + GetAverage());
+        System.out.println("Integers full statistics:"+ "\n"
+                +"count:\t\t"+ count + "\n"
+                +"max:\t\t" +max +"\n"
+                +"min:\t\t"+ min+"\n"
+                +"sum:\t\t" + sum +"\n"
+                +"average:\t" + new BigDecimal(GetAverage()).toPlainString() );
+        System.out.println();
     }
     private double GetAverage(){
         return (double) sum /count;

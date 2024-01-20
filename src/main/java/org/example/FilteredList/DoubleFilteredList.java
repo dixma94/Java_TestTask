@@ -10,7 +10,7 @@ public class DoubleFilteredList extends FilteredList<Double> {
     @Override
     public boolean TryAddToList(String line) {
         try{
-            Double value = Double.parseDouble(line);
+            double value = Double.parseDouble(line);
             this.add(line);
             statistics.AddValue(value);
             return true;
