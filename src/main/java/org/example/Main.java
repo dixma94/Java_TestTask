@@ -8,7 +8,6 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        args = new String[]{"in1.txt","in2.txt"};
         if (args.length == 0) throw new Exception("Missing input text files. Specify the path to the input file");
 
         FileWriteReader fileWriteReader = new FileWriteReader();

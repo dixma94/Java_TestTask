@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Filter_Utility">
+    <output-path>$PROJECT_DIR$/out/artifacts/Filter_Utility</output-path>
+    <root id="archive" name="Filter_Utility.jar">
+      <element id="module-output" name="TestWithMaven" />
+    </root>
+  </artifact>
+</component>
