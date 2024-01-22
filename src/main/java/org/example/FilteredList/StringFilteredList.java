@@ -9,6 +9,7 @@ public class StringFilteredList extends FilteredList<String> {
     }
     @Override
     public boolean TryAddToList(String line) {
+            if(line.isEmpty()) return  true;
             this.add(line);
             statistics.AddValue(line);
             return true;
